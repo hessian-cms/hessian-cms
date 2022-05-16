@@ -1,1 +1,0 @@
-export type AccessRuleName = `${string}Rule`;
