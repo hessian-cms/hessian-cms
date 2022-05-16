@@ -1,10 +1,12 @@
 {
   "name": "hessian-cms",
+  "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "workspaces": [
-    "./packages"
+    "packages/common",
+    "packages/core"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
