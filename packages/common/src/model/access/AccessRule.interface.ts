@@ -1,7 +1,8 @@
 import { ComplexAccessRule } from "./ComplexAccessRule.type";
 
 export default interface AccessRule<T> {
-    permit?: string[],
-    deny?: string[],
+    displayName?: string,
+    permitAttributes?: string[],
+    denyAttributes?: string[],
     rule?: ComplexAccessRule<T>
 }
