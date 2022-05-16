@@ -1,6 +1,6 @@
-import { StateTransition } from "./StateTransition.interface"
+import { StateTransitions } from "./StateTransitions.interface"
 
 export interface State {
     displayName?:string,
-    transitions: StateTransition[]
+    transitions: StateTransitions
 }
