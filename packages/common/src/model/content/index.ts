@@ -1,1 +1,2 @@
-export * from "./ContentDefinition.interface";
+export * from "./Content.interface";
+export * from "./Contents.interface";
