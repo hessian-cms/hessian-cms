@@ -8,7 +8,7 @@
     "packages/*"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "yarn workspace @hessian-cms/test test",
     "preversion": "echo script:Preversion",
     "version": "echo script:Version",
     "postversion": "echo script:Postversion"
