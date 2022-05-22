@@ -8,6 +8,7 @@
     "packages/*"
   ],
   "scripts": {
+    "start:ui": "yarn workspace @hessian-cms/ui start",
     "test": "yarn workspace @hessian-cms/test test",
     "preversion": "echo script:Preversion",
     "version": "echo script:Version",
