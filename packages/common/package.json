@@ -7,8 +7,7 @@
     "dist"
   ],
   "scripts": {
-    "preinstall": "tsc",
-    "test": "echo Not implemented"
+    "preinstall": "tsc"
   },
   "peerDependencies": {
     "typescript": "^4.6.4"

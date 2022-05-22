@@ -4,9 +4,7 @@
   "main": "index.js",
 
   "scripts": {
-    "test": "echo Not implemented",
-    "start": "tsc && node dist/index.js",
-    "dev": "ts-node-dev --respawn src/index.ts"
+    "start": "tsc && node dist/index.js"
   },
 
   "dependencies": {
