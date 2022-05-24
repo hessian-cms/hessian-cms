@@ -13,9 +13,10 @@
     "postinstall": "yarn workspaces run tsc",
     "preversion": "echo script:Preversion",
     "version": "echo script:Version",
-    "postversion": "echo script:Postversion"
+    "postversion": "echo script:Postversion",
+    "start": "yarn workspace @hessian-cms/core start"
   },
   "keywords": [],
   "author": "",
-  "license": "GNU AFFERO GENERAL PUBLIC LICENSE Version 3"
+  "license": "AGPL-3.0-or-later"
 }
