@@ -8,7 +8,9 @@
     "packages/*"
   ],
   "scripts": {
-    "test": "yarn workspace @hessian-cms/test test",
+    "test": "yarn workspaces run test",
+    "build": "yarn workspaces run tsc",
+    "postinstall": "yarn workspaces run tsc",
     "preversion": "echo script:Preversion",
     "version": "echo script:Version",
     "postversion": "echo script:Postversion"
