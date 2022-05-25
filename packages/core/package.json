@@ -1,7 +1,11 @@
 {
   "name": "@hessian-cms/core",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/app.ts",
+  "bin": {
+    "hessian-core": "dist/app.js",
+    "hcms": "dist/app.js"
+  },
   "files": [
     "dist/**"
   ],
