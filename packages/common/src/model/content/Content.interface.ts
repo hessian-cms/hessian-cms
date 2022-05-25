@@ -1,5 +1,5 @@
 import { DisplayNamed } from "../common";
 
-export interface Content<ContentType, MetaType> extends DisplayNamed {
+export interface Content<ContentType = any, MetaType = any> extends DisplayNamed {
     
 }
