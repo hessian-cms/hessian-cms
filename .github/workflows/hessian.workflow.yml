@@ -1,0 +1,32 @@
+name: Hessian-CMS Workflow
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  install-and-test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Install Node
+      uses: actions/setup-node@v2
+      with: 
+        node-version: 16.x
+    - name: node --version
+      run: node --version
+    - name: Install dependencies
+      run: npx yarn install
+    - name: Install dependencies
+      run: npx yarn test
+    - name: Upload build
+      uses: actions/upload-artifact@v3
+      with:
+        name: build
+        path: | 
+          ./
+          !node_modules
+        retention-days: 2
