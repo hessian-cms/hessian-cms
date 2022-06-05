@@ -1,5 +1,5 @@
-export interface Subject {
+export interface Subject<T = any> {
     name: string,
     attributes?: string[],
-    [name: string]: any
+    meta?: T
 }
