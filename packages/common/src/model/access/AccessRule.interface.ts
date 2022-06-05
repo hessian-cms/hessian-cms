@@ -1,8 +1,10 @@
 import { DisplayNamed } from "../common";
 import { ComplexAccessRule } from "./ComplexAccessRule.type";
 
-export default interface AccessRule<T> extends DisplayNamed {
-    permitAttributes?: string[],
-    denyAttributes?: string[],
+export type AccessRuleType = "PERMIT" | "DENY";
+
+export interface AccessRule<T> extends DisplayNamed {
+    type: AccessRuleType
+    attributes?: string[],
     rule?: ComplexAccessRule<T>
 }
