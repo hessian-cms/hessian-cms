@@ -1,3 +1,3 @@
 export interface DisplayNamed {
-    displayName?:string
+    displayName?: string
 }

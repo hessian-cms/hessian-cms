@@ -1,2 +1,2 @@
-export * from "./Declaration.interface";
-export * from "./DisplayNamed.interface";
+export * from './DisplayNamed.interface';
+export * from './WithId.interface';
