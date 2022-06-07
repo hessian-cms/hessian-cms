@@ -10,10 +10,10 @@
   "scripts": {
     "test": "yarn workspaces run test",
     "build": "yarn workspaces run tsc",
-    "postinstall": "yarn workspaces run tsc",
-    "preversion": "echo script:Preversion",
-    "version": "echo script:Version",
-    "postversion": "echo script:Postversion",
+    "postinstall": "echo script:postinstall",
+    "preversion": "echo script:preversion",
+    "version": "echo script:version",
+    "postversion": "echo script:postversion",
     "start": "yarn workspace @hessian-cms/core start"
   },
   "keywords": [],
