@@ -21,3 +21,9 @@ export const SIMPLE_COMPLEX_CONTENT_MODEL_DATA_CORRECT:Person = {
     forename: "Hans",
     age: 123
 }
+
+export const SIMPLE_COMPLEX_CONTENT_MODEL_DATA_WRONG:any = {
+    name: "Dampf",
+    forename: "Hans",
+    age: "123"
+}
