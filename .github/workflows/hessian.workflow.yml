@@ -20,7 +20,7 @@ jobs:
       run: node --version
     - name: Install dependencies
       run: npx yarn install
-    - name: Install dependencies
+    - name: Test
       run: npx yarn test
     - name: Upload build
       uses: actions/upload-artifact@v3
