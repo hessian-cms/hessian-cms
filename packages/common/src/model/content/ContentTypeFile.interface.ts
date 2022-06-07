@@ -1,5 +1,5 @@
 import { ContentTypeCommon } from "./ContentTypeCommon.interface";
 
-export interface ContentTypeFile<T> extends ContentTypeCommon<T> {
+export interface ContentTypeFile extends ContentTypeCommon {
     type: "FILE",
 }
