@@ -10,7 +10,7 @@ export const validateFieldType = async (field: any, fieldType: FieldType): Promi
     }
 }
 
-export const validateFieldTypeString = async (field: any, fieldType: FieldTypeString) => {
+export const validateFieldTypeString = async (field: any, fieldType: FieldTypeString): Promise<boolean> => {
     if (typeof field !== 'string') {
         return false;
     }
@@ -18,7 +18,7 @@ export const validateFieldTypeString = async (field: any, fieldType: FieldTypeSt
     return true;
 }
 
-export const validateFieldTypeNumber = async (field: any, fieldType: FieldTypeNumber) => {
+export const validateFieldTypeNumber = async (field: any, fieldType: FieldTypeNumber): Promise<boolean> => {
     if (typeof field !== 'number') {
         return false;
     }
@@ -26,10 +26,10 @@ export const validateFieldTypeNumber = async (field: any, fieldType: FieldTypeNu
     return true;
 }
 
-export const validateFieldTypeBoolean = async (field: any, fieldType: FieldTypeBoolean) => {
+export const validateFieldTypeBoolean = async (field: any, fieldType: FieldTypeBoolean): Promise<boolean> => {
     return typeof field === "boolean";
 }
 
-export const validateFieldTypeComplex = async (field: any, fieldType: FieldTypeComplex) => {
+export const validateFieldTypeComplex = async (field: any, fieldType: FieldTypeComplex): Promise<boolean> => {
     throw (new Error("Not implemented"));
 }
