@@ -1,6 +1,10 @@
 import { FieldType, FieldTypeBoolean, FieldTypeComplex, FieldTypeNumber, FieldTypeString } from "@hessian-cms/common";
 
 export const validateFieldType = async (field: any, fieldType: FieldType): Promise<boolean> => {
+    if(fieldType.optional && field === undefined) {
+        return true;
+    }
+
     switch (fieldType.type) {
         case "STRING": return await validateFieldTypeString(field, fieldType); break;
         case "NUMBER": return await validateFieldTypeNumber(field, fieldType); break;
