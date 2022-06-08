@@ -6,7 +6,7 @@ export const validateFieldType = async (field: any, fieldType: FieldType): Promi
         case "NUMBER": return await validateFieldTypeNumber(field, fieldType); break;
         case "BOOLEAN": return await validateFieldTypeBoolean(field, fieldType); break;
         case "COMPLEX": return await validateFieldTypeComplex(field, fieldType); break;
-        default: return false;
+        default: throw new Error("FieldType doesn't exist");
     }
 }
 
@@ -15,12 +15,42 @@ export const validateFieldTypeString = async (field: any, fieldType: FieldTypeSt
         return false;
     }
 
+    if(fieldType.condition) {
+        if(!await fieldType.condition(field)) {
+            return false;
+        }
+    }
+
+    if(fieldType.regExp) {
+        if(!fieldType.regExp.test(field)) {
+            return false;
+        }
+    }
+
     return true;
 }
 
 export const validateFieldTypeNumber = async (field: any, fieldType: FieldTypeNumber): Promise<boolean> => {
     if (typeof field !== 'number') {
         return false;
+    }
+
+    if(fieldType.to) {
+        if(field > fieldType.to) {
+            return false;
+        }
+    }
+
+    if(fieldType.from) {
+        if(field < fieldType.from) {
+            return false;
+        }
+    }
+
+    if(fieldType.condition) {
+        if(!await fieldType.condition(field)) {
+            return false;
+        }
     }
 
     return true;
