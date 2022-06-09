@@ -4,7 +4,7 @@ import { validateFieldType } from "./fieldTypes/validateFieldType.function";
 export const validateContentType = async (content: any, contentType: ContentType): Promise<boolean> => {
         switch (contentType.type) {
             case "COMPLEX": return await validateContentTypeComplex(content, contentType); break;
-            case "FILE": throw new Error("Not implemented"); break;
+            case "ASSET": throw new Error("Not implemented"); break;
             default: throw new Error("Unkown Error");
         }
 }
