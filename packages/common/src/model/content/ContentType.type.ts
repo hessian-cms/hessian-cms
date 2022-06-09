@@ -1,4 +1,7 @@
 import { ContentTypeComplex } from "./ContentTypeComplex.interface";
-import { ContentTypeFile } from "./ContentTypeFile.interface";
+import { ContentTypeAsset } from "./ContentTypeAsset.interface";
 
-export type ContentType<T = any> = ContentTypeComplex | ContentTypeFile;
+/**
+ * Definition of ContentTypes
+ */
+export type ContentType = ContentTypeComplex | ContentTypeAsset;
