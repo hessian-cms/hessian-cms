@@ -1,3 +1,6 @@
+/**
+ * Discriminator for type of field
+ */
 export type DiscriminatorFieldType = "STRING" | "BOOLEAN" | "NUMBER" | "COMPLEX"
 
 export const FIELD_TYPE_STRING:DiscriminatorFieldType  = "STRING";

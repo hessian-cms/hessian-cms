@@ -1,7 +1,10 @@
 import { ContentTypeCommon } from "./ContentTypeCommon.interface";
-import { FieldType } from "./fieldTypes";
+import { FieldsDefinition } from "./fieldTypes/FieldsDefinition.interface";
 
+/**
+ * Definition of COMPLEX content type
+ */
 export interface ContentTypeComplex extends ContentTypeCommon {
     type: "COMPLEX",
-    definition: {[fielName:string]: FieldType}
+    definition: FieldsDefinition
 }

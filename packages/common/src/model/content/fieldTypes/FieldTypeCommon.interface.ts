@@ -1,5 +1,8 @@
 import { DiscriminatorFieldType } from "./DiscriminatorFieldType.type";
 
+/**
+ * Common interface to be impleneted in every FieldType
+ */
 export interface FieldTypeCommon<T = any> {
     type: DiscriminatorFieldType,
     optional?: boolean,
