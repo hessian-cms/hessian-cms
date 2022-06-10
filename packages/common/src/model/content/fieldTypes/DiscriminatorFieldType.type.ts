@@ -15,6 +15,9 @@ export const FIELD_TYPE_COMPLEX:DiscriminatorFieldType = "COMPLEX";
 
 export const FIELD_TYPES:DiscriminatorFieldType[] = [FIELD_TYPE_STRING, FIELD_TYPE_BOOLEAN, FIELD_TYPE_NUMBER, FIELD_TYPE_COMPLEX]
 
+/**
+ * To be used in keyof features of DiscriminatorFieldType
+ */
 export interface DiscriminatorFieldTypeMapping {
     STRING: FieldTypeString,
     BOOLEAN: FieldTypeBoolean,
