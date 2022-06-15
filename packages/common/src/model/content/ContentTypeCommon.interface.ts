@@ -1,5 +1,5 @@
 import { DisplayNamed, WithId } from "../common";
-import { DiscriminatorContentType } from "./DiscriminatorContentType.type";
+import { DiscriminatorContentType } from "./DiscriminatorContentType.enum";
 import { Tag } from "./Tag.interface";
 
 /**
