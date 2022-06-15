@@ -1,4 +1,4 @@
-import { FieldType, FIELD_TYPES, FIELD_TYPE_BOOLEAN, FIELD_TYPE_COMPLEX, FIELD_TYPE_NUMBER, FIELD_TYPE_STRING } from "@hessian-cms/common";
+import { FieldType, FIELD_TYPES } from "@hessian-cms/common";
 
 export const isFieldType = (obj: any): obj is FieldType => {
     const { type, optional, hidden, condition } = obj;
