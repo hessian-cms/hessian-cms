@@ -1,4 +1,4 @@
-import { DiscriminatorFieldType } from "./DiscriminatorFieldType.type";
+import { DiscriminatorFieldType } from "./DiscriminatorFieldType.enum";
 
 /**
  * Common interface to be impleneted in every FieldType
