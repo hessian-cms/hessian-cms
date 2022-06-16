@@ -9,7 +9,7 @@ describe("Boolean field validation tests", () => {
     })
 
     test("Test simple boolean field validation with false", async () => {
-        return expect(validateFieldTypeBoolean(true, {
+        return expect(validateFieldTypeBoolean(false, {
             type: DiscriminatorFieldType.BOOLEAN
         })).resolves.toBe(true);
     })
@@ -25,7 +25,7 @@ describe("Boolean field validation tests", () => {
         return expect(validateFieldTypeBoolean(true, {
             type: DiscriminatorFieldType.BOOLEAN,
             condition: async (value) => { return value === false }
-        })).resolves.toBe(true);
+        })).resolves.toBe(false);
     })
 
     test("Test simple boolean field validation with wrong type", async () => {

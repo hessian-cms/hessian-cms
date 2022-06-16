@@ -1,5 +1,18 @@
 import { FieldTypeComplex } from "@hessian-cms/common";
+import { validateFieldType } from "./validateFieldType.function";
 
 export const validateFieldTypeComplex = async (field: any, fieldType: FieldTypeComplex): Promise<boolean> => {
-    throw (new Error("Not implemented"));
+    if (typeof field !== 'object') {
+        return false;
+    }
+
+    const keys: string[] = Object.keys(fieldType.definition);
+
+    for (let key of keys) {
+        if (!await validateFieldType(field[key], fieldType.definition[key])) {
+            return false;
+        }
+    }
+
+    return true;
 }
