@@ -3,4 +3,7 @@ export enum DiscriminatorContentType {
     COMPLEX="COMPLEX"
 }
 
-export const CONTENT_TYPES:DiscriminatorContentType[] = [DiscriminatorContentType.ASSET, DiscriminatorContentType.COMPLEX]
+export const CONTENT_TYPES:DiscriminatorContentType[] = [
+    DiscriminatorContentType.ASSET, 
+    DiscriminatorContentType.COMPLEX
+]

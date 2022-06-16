@@ -6,7 +6,7 @@ import { FieldTypeString } from "./FieldTypeString.interface";
 /**
  * To be used in keyof features of DiscriminatorFieldType
  */
- export interface DiscriminatorFieldTypeMapping {
+export interface DiscriminatorFieldTypeMapping {
     STRING: FieldTypeString,
     BOOLEAN: FieldTypeBoolean,
     NUMBER: FieldTypeNumber,
