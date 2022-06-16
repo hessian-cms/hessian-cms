@@ -35,6 +35,34 @@ describe("Test on function isFieldType", () => {
         })).toBe(true);
     })
 
+    test("Test proper field type for NUMBER - with proper from", async () => {
+        return expect(isFieldType({
+            type: DiscriminatorFieldType.NUMBER,
+            from: 50
+        })).toBe(true);
+    })
+
+    test("Test proper field type for NUMBER - with incorrect from", async () => {
+        return expect(isFieldType({
+            type: DiscriminatorFieldType.NUMBER,
+            from: "50"
+        })).toBe(false);
+    })
+
+    test("Test proper field type for NUMBER - with proper to", async () => {
+        return expect(isFieldType({
+            type: DiscriminatorFieldType.NUMBER,
+            to: 50
+        })).toBe(true);
+    })
+
+    test("Test proper field type for NUMBER - with incorrect to", async () => {
+        return expect(isFieldType({
+            type: DiscriminatorFieldType.NUMBER,
+            to: "50"
+        })).toBe(false);
+    })
+
     test("Test proper field type for COMPLEX", async () => {
         return expect(isFieldType({
             type: DiscriminatorFieldType.COMPLEX,
