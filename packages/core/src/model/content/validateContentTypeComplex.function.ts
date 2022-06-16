@@ -1,7 +1,7 @@
 import { ContentTypeComplex } from "@hessian-cms/common";
 import { validateFieldType } from "./fieldTypes";
 
-export const validateContentTypeComplex = async (content: any, contentType: ContentTypeComplex) => {
+export const validateContentTypeComplex = async (content: any, contentType: ContentTypeComplex):Promise<boolean> => {
     if (typeof content !== 'object') {
         return false;
     }
