@@ -15,6 +15,20 @@ describe("Test on function isFieldType", () => {
         })).toBe(true);
     })
 
+    test("Test proper field type for STRING - with proper regExp", async () => {
+        return expect(isFieldType({
+            type: DiscriminatorFieldType.STRING,
+            regExp: /asdad/
+        })).toBe(true);
+    })
+
+    test("Test proper field type for STRING - with incorrect regExp", async () => {
+        return expect(isFieldType({
+            type: DiscriminatorFieldType.STRING,
+            regExp: "wrong regexp"
+        })).toBe(false);
+    })
+
     test("Test proper field type for NUMBER", async () => {
         return expect(isFieldType({
             type: DiscriminatorFieldType.NUMBER
@@ -23,7 +37,12 @@ describe("Test on function isFieldType", () => {
 
     test("Test proper field type for COMPLEX", async () => {
         return expect(isFieldType({
-            type: DiscriminatorFieldType.COMPLEX
+            type: DiscriminatorFieldType.COMPLEX,
+            definition: {
+                demo: {
+                    type: DiscriminatorFieldType.BOOLEAN
+                }
+            }
         })).toBe(true);
     })
 
@@ -53,5 +72,12 @@ describe("Test on function isFieldType", () => {
             type: DiscriminatorFieldType.BOOLEAN,
             condition: 42
         })).toBe(false);
+    })
+
+    test("Test wrong field type for String - RegExp wrong type", async () => {
+        return expect(isFieldType({
+            type: DiscriminatorFieldType.BOOLEAN,
+            regExp: "Test"
+        })).toBe(true);
     })
 });
