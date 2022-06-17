@@ -1,38 +1,23 @@
-import { DiscriminatorContentType, DiscriminatorFieldType } from "@hessian-cms/common"
+import { ContentTypeComplex, DiscriminatorContentType, FieldTypeComplex } from "@hessian-cms/common";
 import { validateContentType } from "../../src/model/content";
+import { TEST_DEFINITON_FIELD_TYPE, TEST_OBJ, TEST_OBJ_DEFECT, TEST_OBJ_DEFECT_PATH } from "../fieldTypes/fieldTypeComplex.test";
+
+const CONTENT_TYPE_DEFINITION: ContentTypeComplex = {
+    type: DiscriminatorContentType.COMPLEX,
+    definition: (TEST_DEFINITON_FIELD_TYPE as FieldTypeComplex).definition
+}
 
 describe("ContentType tests", () => {
     test("Simple ContentTypeTest", async () => {
-        return expect(await validateContentType({
-            name: "Dampf",
-            prename: "Hans",
-            birthYear: 1970,
-            address: {
-                street: "Musterstraße",
-                no: 5,
-                city: "Musterstadt",
-                zip: "12345"
-            }
-        }, {
-            type: DiscriminatorContentType.COMPLEX,
-            definition: {
-                name: { type: DiscriminatorFieldType.STRING },
-                prename: { type: DiscriminatorFieldType.STRING },
-                birthYear: {
-                    type: DiscriminatorFieldType.NUMBER,
-                    from: 1950,
-                    to: 2022
-                },
-                address: {
-                    type: DiscriminatorFieldType.COMPLEX,
-                    definition: {
-                        street: { type: DiscriminatorFieldType.STRING },
-                        no: { type: DiscriminatorFieldType.NUMBER, from: 0 },
-                        city: { type: DiscriminatorFieldType.STRING },
-                        zip: { type: DiscriminatorFieldType.STRING }
-                    }
-                }
-            }
-        })).toBe(true);
+        return expect(await validateContentType(TEST_OBJ, CONTENT_TYPE_DEFINITION)).toBe(TEST_OBJ);
+    })
+
+    test("Simple ContentTypeTest with error in definition", async () => {
+        try {
+            await validateContentType(TEST_OBJ_DEFECT, CONTENT_TYPE_DEFINITION);
+            return expect(true).toBe(false);
+        } catch (e: any) {
+            expect(e.getPath()).toBe(TEST_OBJ_DEFECT_PATH);
+        }
     })
 })
