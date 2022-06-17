@@ -1,1 +1,1 @@
-console.log("Hallo Welt!!!?");
+export * from "./model"
