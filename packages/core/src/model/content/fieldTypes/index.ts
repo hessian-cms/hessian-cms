@@ -1,3 +1,5 @@
+export * from "./errors"
+
 export * from "./isFieldType.function"
 export * from "./validateFieldType.function"
 export * from "./validateFieldTypeBoolean.function"

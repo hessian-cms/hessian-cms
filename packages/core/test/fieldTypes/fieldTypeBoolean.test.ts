@@ -1,5 +1,6 @@
 import { DiscriminatorFieldType } from "@hessian-cms/common";
 import { validateFieldTypeBoolean } from "../../src/model/content";
+import { FieldTypeValidationErrorBoolean } from "../../src/model/content/fieldTypes/errors";
 
 describe("Boolean field validation tests", () => {
     test("Test simple boolean field validation with true", async () => {
@@ -11,7 +12,7 @@ describe("Boolean field validation tests", () => {
     test("Test simple boolean field validation with false", async () => {
         return expect(validateFieldTypeBoolean(false, {
             type: DiscriminatorFieldType.BOOLEAN
-        })).resolves.toBe(true);
+        })).resolves.toBe(false);
     })
 
     test("Test simple boolean field validation with proper condition", async () => {
@@ -25,12 +26,12 @@ describe("Boolean field validation tests", () => {
         return expect(validateFieldTypeBoolean(true, {
             type: DiscriminatorFieldType.BOOLEAN,
             condition: async (value) => { return value === false }
-        })).resolves.toBe(false);
+        })).rejects.toBeInstanceOf(FieldTypeValidationErrorBoolean);
     })
 
     test("Test simple boolean field validation with wrong type", async () => {
         return expect(validateFieldTypeBoolean("true", {
             type: DiscriminatorFieldType.BOOLEAN
-        })).resolves.toBe(false);
+        })).rejects.toBeInstanceOf(FieldTypeValidationErrorBoolean);
     })
 })

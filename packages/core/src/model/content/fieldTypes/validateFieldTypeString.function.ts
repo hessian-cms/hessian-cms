@@ -1,21 +1,22 @@
 import { FieldTypeString } from "@hessian-cms/common";
+import { FieldTypeValidationErrorString } from "./errors";
 
-export const validateFieldTypeString = async (field: any, fieldType: FieldTypeString): Promise<boolean> => {
+export const validateFieldTypeString = async (field: any, fieldType: FieldTypeString, key?: string): Promise<string> => {
     if (typeof field !== 'string') {
-        return false;
+        throw new FieldTypeValidationErrorString(key ? [key] : [], "FieldType STRING type not string")
     }
 
-    if(fieldType.condition) {
-        if(!await fieldType.condition(field)) {
-            return false;
+    if (fieldType.condition) {
+        if (!await fieldType.condition(field)) {
+            throw new FieldTypeValidationErrorString(key ? [key] : [], `FieldType STRING value doesn't meet condition`)
         }
     }
 
-    if(fieldType.regExp) {
-        if(!fieldType.regExp.test(field)) {
-            return false;
+    if (fieldType.regExp) {
+        if (!fieldType.regExp.test(field)) {
+            throw new FieldTypeValidationErrorString(key ? [key] : [], `FieldType STRING value doesn't meet regExp (${fieldType.regExp})`, field)
         }
     }
 
-    return true;
+    return field;
 }
