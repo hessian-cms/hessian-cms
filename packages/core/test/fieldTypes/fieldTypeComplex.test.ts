@@ -1,7 +1,7 @@
-import { DiscriminatorFieldType, FieldType, FieldTypeComplex } from "@hessian-cms/common";
-import { FieldTypeValidationError, validateFieldTypeComplex } from "../../src/model/content";
+import { DiscriminatorFieldType, FieldType } from "@hessian-cms/common";
+import { validateFieldTypeComplex } from "../../src/model/content";
 
-const TEST_DEFINITON_FIELD_TYPE: FieldTypeComplex = {
+export const TEST_DEFINITON_FIELD_TYPE: FieldType = {
     type: DiscriminatorFieldType.COMPLEX,
     definition: {
         name: { type: DiscriminatorFieldType.STRING },
@@ -23,7 +23,7 @@ const TEST_DEFINITON_FIELD_TYPE: FieldTypeComplex = {
     }
 }
 
-const TEST_OBJ: object = {
+export const TEST_OBJ: object = {
     name: "Dampf",
     prename: "Hans",
     birthYear: 1970,
@@ -35,7 +35,7 @@ const TEST_OBJ: object = {
     }
 }
 
-const TEST_OBJ_DEFECT: object = {
+export const TEST_OBJ_DEFECT: object = {
     name: "Dampf",
     prename: "Hans",
     birthYear: 1970,
@@ -47,7 +47,7 @@ const TEST_OBJ_DEFECT: object = {
     }
 }
 
-const TEST_OBJ_DEFECT_PATH:string = "address.zip";
+export const TEST_OBJ_DEFECT_PATH: string = "address.zip";
 
 describe("Complex field validation tests", () => {
     test("Test simple person example", async () => {
@@ -58,7 +58,7 @@ describe("Complex field validation tests", () => {
         try {
             await validateFieldTypeComplex(TEST_OBJ_DEFECT, TEST_DEFINITON_FIELD_TYPE);
             return expect(true).toBe(false);
-        } catch(e: any) {
+        } catch (e: any) {
             expect(e.getPath()).toBe(TEST_OBJ_DEFECT_PATH);
         }
     })

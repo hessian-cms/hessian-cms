@@ -1,5 +1,5 @@
 import { DiscriminatorFieldType } from "./DiscriminatorFieldType.enum";
-import { FieldType } from "./FieldType.type";
+import { FieldsDefinition } from "./FieldsDefinition.interface";
 import { FieldTypeCommon } from "./FieldTypeCommon.interface";
 
 /**
@@ -7,5 +7,5 @@ import { FieldTypeCommon } from "./FieldTypeCommon.interface";
  */
 export interface FieldTypeComplex<T = any> extends FieldTypeCommon<T> { 
     type: DiscriminatorFieldType.COMPLEX,
-    definition: {[field:string]: FieldType}
+    definition: FieldsDefinition
 }
