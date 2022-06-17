@@ -1,7 +1,7 @@
 import { Asset } from "@hessian-cms/common"
 
 export const isAsset = (obj: any): obj is Asset => {
-    const { filename, mimetype, filesize } = obj;
+    const { filename, mimetype, location } = obj;
 
     if(typeof filename !== "string") {
         // TODO: Regex check for filename
@@ -13,7 +13,7 @@ export const isAsset = (obj: any): obj is Asset => {
         return false;
     }
 
-    if(typeof filesize !== "number") {
+    if(typeof location !== "string") {
         return false;
     }
 
