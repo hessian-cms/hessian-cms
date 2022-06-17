@@ -3,5 +3,5 @@ import { MimeType } from "./MimeType.type";
 export interface Asset {
     filename: string,
     mimetype: MimeType,
-    filesize: number,
+    location: string
 }

@@ -1,16 +1,17 @@
-import { AssetUpload, ContentTypeAsset, ContentTypeComplex, DiscriminatorContentType, FieldTypeComplex } from "@hessian-cms/common";
+import { Asset, ContentTypeAsset, ContentTypeComplex, DiscriminatorContentType, FieldTypeComplex } from "@hessian-cms/common";
 import { AssetError, validateContentType } from "../../src/model/content";
 import { TEST_DEFINITON_FIELD_TYPE, TEST_OBJ, TEST_OBJ_DEFECT, TEST_OBJ_DEFECT_PATH } from "../fieldTypes/fieldTypeComplex.test";
+import { resolve } from "path";
+import { statSync } from "fs";
 
 const CONTENT_TYPE_COMPLEX_DEFINITION: ContentTypeComplex = {
     type: DiscriminatorContentType.COMPLEX,
     definition: (TEST_DEFINITON_FIELD_TYPE as FieldTypeComplex).definition
 }
 
-const ASSET: AssetUpload = {
+const ASSET: Asset = {
     filename: "test.txt",
-    filesize: 150,
-    location: "",
+    location: resolve("test/index.test.ts"),
     mimetype: "text/plain"
 }
 
@@ -50,5 +51,9 @@ describe("ContentType tests", () => {
 
     test("Simple ContentTypeAsset Test with Error", async () => {
         return expect(validateContentType(ASSET, CONTENT_TYPE_ASSET_DEFINITION_WITH_ERROR)).rejects.toBeInstanceOf(AssetError);
+    })
+
+    test("Simple ContentTypeAsset Test with Error - file doesn't exist", async () => {
+        return expect(validateContentType({...ASSET, location: "./test.txt"}, CONTENT_TYPE_ASSET_DEFINITION)).rejects.toBeInstanceOf(AssetError);
     })
 })

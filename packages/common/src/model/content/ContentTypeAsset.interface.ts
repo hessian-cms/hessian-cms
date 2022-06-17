@@ -1,4 +1,4 @@
-import { AssetUpload } from "./asset";
+import { Asset } from "./asset";
 import { ContentTypeCommon } from "./ContentTypeCommon.interface";
 import { DiscriminatorContentType } from "./DiscriminatorContentType.enum";
 
@@ -14,6 +14,6 @@ export interface ContentTypeAsset extends ContentTypeCommon {
         allowedFilenames?: string,
         sizeFrom?: number,
         sizeTo?: number
-        condition?: (asset: AssetUpload)=>Promise<boolean>
+        condition?: (asset: Asset)=>Promise<boolean>
     }
 }
