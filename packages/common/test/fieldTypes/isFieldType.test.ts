@@ -1,5 +1,4 @@
-import { DiscriminatorFieldType } from "@hessian-cms/common";
-import { isFieldType } from "../../src/model/content";
+import { DiscriminatorFieldType, isFieldType } from "../../src/model/content";
 
 
 describe("Test on function isFieldType", () => {

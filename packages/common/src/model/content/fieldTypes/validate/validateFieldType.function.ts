@@ -1,4 +1,4 @@
-import { FieldType } from "@hessian-cms/common";
+import { FieldType } from "../FieldType.type";
 import { FieldTypeValidationError } from "./errors";
 import { validateFieldTypeBoolean } from "./validateFieldTypeBoolean.function";
 import { validateFieldTypeComplex } from "./validateFieldTypeComplex.function";

@@ -1,6 +1,6 @@
-import { Asset, ContentTypeAsset } from "@hessian-cms/common";
-import { AssetError, isAsset } from "./asset";
 import { existsSync, statSync } from "fs";
+import { Asset, AssetError, isAsset } from "../asset";
+import { ContentTypeAsset } from "../ContentTypeAsset.interface";
 
 export const validateContentTypeAsset = async (asset: any, contentType: ContentTypeAsset): Promise<Asset> => {
     if (!isAsset(asset)) {

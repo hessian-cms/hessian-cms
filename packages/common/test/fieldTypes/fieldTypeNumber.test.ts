@@ -1,6 +1,5 @@
-import { DiscriminatorFieldType } from "@hessian-cms/common";
-import { validateFieldTypeNumber } from "../../src/model/content";
-import { FieldTypeValidationErrorNumber } from "../../src/model/content/fieldTypes/errors";
+import { DiscriminatorFieldType, validateFieldTypeNumber } from "../../src/model/content";
+import { FieldTypeValidationErrorNumber } from "../../src/model/content/fieldTypes/validate/errors";
 
 describe("Number field validation tests", () => {
     test("Test simple number field validation with 0", async () => {

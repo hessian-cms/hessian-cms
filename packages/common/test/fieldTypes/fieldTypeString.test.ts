@@ -1,6 +1,5 @@
-import { DiscriminatorFieldType } from "@hessian-cms/common";
-import { validateFieldTypeString } from "../../src/model/content"
-import { FieldTypeValidationErrorString } from "../../src/model/content/fieldTypes/errors";
+import { DiscriminatorFieldType, validateFieldTypeString } from "../../src/model/content"
+import { FieldTypeValidationErrorString } from "../../src/model/content/fieldTypes/validate/errors";
 
 const TEST_STRING = "TeSt"
 const TEST_STRING_STARTS_WITH = "Te";

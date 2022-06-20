@@ -1,4 +1,6 @@
-import { DiscriminatorFieldType, FieldType, FieldTypeString, FIELD_TYPES } from "@hessian-cms/common";
+import { DiscriminatorFieldType, FIELD_TYPES } from "../DiscriminatorFieldType.enum";
+import { FieldType } from "../FieldType.type";
+import { FieldTypeString } from "../FieldTypeString.interface";
 
 export const isFieldType = (obj: any): obj is FieldType => {
     const { type, optional, hidden, condition } = obj;

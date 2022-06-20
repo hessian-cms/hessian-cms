@@ -1,4 +1,4 @@
-import { FieldTypeString } from "@hessian-cms/common";
+import { FieldTypeString } from "../FieldTypeString.interface";
 import { FieldTypeValidationErrorString } from "./errors";
 
 export const validateFieldTypeString = async (field: any, fieldType: FieldTypeString, key?: string): Promise<string> => {

@@ -6,3 +6,6 @@ export * from "./FieldTypeNumber.interface"
 export * from "./FieldTypeComplex.interface"
 export * from "./DiscriminatorFieldType.enum"
 export * from "./DiscriminatorFieldTypeMapping.interface"
+
+export * from "./validate/errors"
+export * from "./validate"

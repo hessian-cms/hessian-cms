@@ -1,4 +1,4 @@
-import { ContentType } from "@hessian-cms/common";
+import { ContentType } from "../ContentType.type";
 import { ContentTypeValidationError } from "./errors";
 import { validateContentTypeAsset } from "./validateContentTypeAsset.function";
 import { validateContentTypeComplex } from "./validateContentTypeComplex.function";

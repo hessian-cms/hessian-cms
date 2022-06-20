@@ -14,7 +14,7 @@
     "preversion": "echo script:preversion",
     "version": "echo script:version",
     "postversion": "echo script:postversion",
-    "start": "yarn workspace @hessian-cms/core start"
+    "start": "echo Not imeplemented yet"
   },
   "keywords": [],
   "author": "",
