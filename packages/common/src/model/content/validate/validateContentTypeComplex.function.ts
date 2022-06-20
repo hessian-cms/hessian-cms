@@ -1,6 +1,6 @@
-import { ContentTypeComplex } from "@hessian-cms/common";
-import { ContentTypeValidationErrorComplex } from "./errors";
-import { FieldTypeValidationError, validateFieldType } from "./fieldTypes";
+import { ContentTypeValidationErrorComplex } from './errors'
+import { FieldTypeValidationError, validateFieldType } from '../fieldTypes/validate'
+import { ContentTypeComplex } from '../ContentTypeComplex.interface';
 
 export const validateContentTypeComplex = async (content: any, contentType: ContentTypeComplex): Promise<any> => {
     if (typeof content !== 'object') {

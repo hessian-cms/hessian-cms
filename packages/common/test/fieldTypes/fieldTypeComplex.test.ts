@@ -1,5 +1,4 @@
-import { DiscriminatorFieldType, FieldType } from "@hessian-cms/common";
-import { validateFieldTypeComplex } from "../../src/model/content";
+import { DiscriminatorFieldType, FieldType, validateFieldTypeComplex } from "../../src/model/content";
 
 export const TEST_DEFINITON_FIELD_TYPE: FieldType = {
     type: DiscriminatorFieldType.COMPLEX,

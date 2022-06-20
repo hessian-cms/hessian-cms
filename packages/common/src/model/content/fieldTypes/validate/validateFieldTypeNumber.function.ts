@@ -1,5 +1,5 @@
-import { FieldTypeNumber } from "@hessian-cms/common";
-import { FieldTypeValidationErrorNumber } from "./errors";
+import { FieldTypeNumber } from "../FieldTypeNumber.interface"
+import { FieldTypeValidationErrorNumber } from "./errors"
 
 export const validateFieldTypeNumber = async (field: any, fieldType: FieldTypeNumber, key?: string): Promise<number> => {
     if (typeof field !== 'number') {

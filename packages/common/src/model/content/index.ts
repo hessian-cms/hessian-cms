@@ -1,5 +1,7 @@
 export * from './fieldTypes';
 export * from './asset';
+export * from './validate'
+
 export * from './ContentType.type';
 // export * from './ContentTypeCommon.interface';
 export * from './ContentTypeComplex.interface';

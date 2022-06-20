@@ -1,4 +1,4 @@
-import { FieldTypeBoolean } from "@hessian-cms/common";
+import { FieldTypeBoolean } from "../FieldTypeBoolean.interface";
 import { FieldTypeValidationErrorBoolean } from "./errors";
 
 export const validateFieldTypeBoolean = async (field: any, fieldType: FieldTypeBoolean, key?: string): Promise<boolean> => {

@@ -1,6 +1,5 @@
-import { DiscriminatorFieldType } from "@hessian-cms/common";
-import { validateFieldTypeBoolean } from "../../src/model/content";
-import { FieldTypeValidationErrorBoolean } from "../../src/model/content/fieldTypes/errors";
+import { DiscriminatorFieldType, validateFieldTypeBoolean } from "../../src/model/content";
+import { FieldTypeValidationErrorBoolean } from "../../src/model/content/fieldTypes/validate/errors";
 
 describe("Common field validation tests", () => {
     test("Test simple optional allowed", async () => {

@@ -1,8 +1,8 @@
-import { Asset, ContentTypeAsset, ContentTypeComplex, DiscriminatorContentType, FieldTypeComplex } from "@hessian-cms/common";
-import { AssetError, validateContentType } from "../../src/model/content";
+
+import { Asset, AssetError, ContentTypeAsset, ContentTypeComplex, DiscriminatorContentType, FieldTypeComplex } from "../../src/model/content";
 import { TEST_DEFINITON_FIELD_TYPE, TEST_OBJ, TEST_OBJ_DEFECT, TEST_OBJ_DEFECT_PATH } from "../fieldTypes/fieldTypeComplex.test";
 import { resolve } from "path";
-import { statSync } from "fs";
+import { validateContentType } from "../../src/model/content/validate/validateContentType.function";
 
 const CONTENT_TYPE_COMPLEX_DEFINITION: ContentTypeComplex = {
     type: DiscriminatorContentType.COMPLEX,

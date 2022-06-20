@@ -1,4 +1,4 @@
-import { Asset } from "@hessian-cms/common"
+import { Asset } from "../Asset.interface";
 
 export const isAsset = (obj: any): obj is Asset => {
     const { filename, mimetype, location } = obj;
