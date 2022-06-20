@@ -1,9 +1,12 @@
 import { DiscriminatorFieldType, FIELD_TYPES } from "../DiscriminatorFieldType.enum";
 import { FieldType } from "../FieldType.type";
+import { FieldTypeBoolean } from "../FieldTypeBoolean.interface";
+import { FieldTypeComplex } from "../FieldTypeComplex.interface";
+import { FieldTypeNumber } from "../FieldTypeNumber.interface";
 import { FieldTypeString } from "../FieldTypeString.interface";
 
-export const isFieldType = (obj: any): obj is FieldType => {
-    const { type, optional, hidden, condition } = obj;
+export const isFieldType = (obj: unknown): obj is FieldType => {
+    const { type, optional, hidden, condition } = obj as FieldType;
 
     if (!FIELD_TYPES.includes(type)) {
         return false;
@@ -21,16 +24,16 @@ export const isFieldType = (obj: any): obj is FieldType => {
         return false;
     }
 
-    switch (obj.type) {
-        case DiscriminatorFieldType.BOOLEAN: return isFieldTypeBoolean(obj);
-        case DiscriminatorFieldType.STRING: return isFieldTypeString(obj);
-        case DiscriminatorFieldType.NUMBER: return isFieldTypeNumber(obj);
-        case DiscriminatorFieldType.COMPLEX: return isFieldTypeComplex(obj);
+    switch (type) {
+        case DiscriminatorFieldType.BOOLEAN: return isFieldTypeBoolean(obj as FieldTypeBoolean);
+        case DiscriminatorFieldType.STRING: return isFieldTypeString(obj as FieldTypeString);
+        case DiscriminatorFieldType.NUMBER: return isFieldTypeNumber(obj as FieldTypeNumber);
+        case DiscriminatorFieldType.COMPLEX: return isFieldTypeComplex(obj as FieldTypeComplex);
         default: return false;
     }
 }
 
-const isFieldTypeString = (obj: any): obj is FieldTypeString => {
+const isFieldTypeString = (obj: FieldTypeString): obj is FieldTypeString => {
     if(obj.regExp) {
         if (!(obj.regExp instanceof RegExp)) {
             return false
@@ -40,11 +43,11 @@ const isFieldTypeString = (obj: any): obj is FieldTypeString => {
     return true;
 }
 
-const isFieldTypeBoolean = (obj: any): obj is FieldTypeString => {
+const isFieldTypeBoolean = (obj: FieldTypeBoolean): obj is FieldTypeBoolean => {
     return obj.type === DiscriminatorFieldType.BOOLEAN;
 }
 
-const isFieldTypeNumber = (obj: any): obj is FieldTypeString => {
+const isFieldTypeNumber = (obj: FieldTypeNumber): obj is FieldTypeNumber => {
     if (obj.from !== undefined) {
         if (typeof obj.from !== "number") {
             return false;
@@ -60,7 +63,7 @@ const isFieldTypeNumber = (obj: any): obj is FieldTypeString => {
     return true;
 }
 
-const isFieldTypeComplex = (obj: any): obj is FieldTypeString => {
+const isFieldTypeComplex = <T extends Record<string, unknown> = Record<string, unknown>>(obj: FieldTypeComplex<T>): obj is FieldTypeComplex<T> => {
     if (typeof obj.definition !== "object") {
         return false;
     }
@@ -71,7 +74,7 @@ const isFieldTypeComplex = (obj: any): obj is FieldTypeString => {
         return false;
     }
 
-    for (let key of keys) {
+    for (const key of keys) {
         if (!isFieldType(obj.definition[key])) {
             return false;
         }
