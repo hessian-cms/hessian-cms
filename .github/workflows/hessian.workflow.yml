@@ -20,6 +20,8 @@ jobs:
       run: node --version
     - name: Install dependencies
       run: npx yarn install
+    - name: Lint
+      run: npx yarn lint
     - name: Test
       run: npx yarn test
     - name: Upload build
