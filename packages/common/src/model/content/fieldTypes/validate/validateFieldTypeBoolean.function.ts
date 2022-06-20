@@ -1,7 +1,7 @@
 import { FieldTypeBoolean } from "../FieldTypeBoolean.interface";
 import { FieldTypeValidationErrorBoolean } from "./errors";
 
-export const validateFieldTypeBoolean = async (field: any, fieldType: FieldTypeBoolean, key?: string): Promise<boolean> => {
+export const validateFieldTypeBoolean = async (field: unknown, fieldType: FieldTypeBoolean, key?: string): Promise<boolean> => {
     if (typeof field !== "boolean") {
         throw new FieldTypeValidationErrorBoolean(key ? [key] : [], "FieldType BOOLEAN type not boolean");
     }

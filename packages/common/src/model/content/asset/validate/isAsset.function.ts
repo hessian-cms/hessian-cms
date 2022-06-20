@@ -1,19 +1,19 @@
 import { Asset } from "../Asset.interface";
 
-export const isAsset = (obj: any): obj is Asset => {
-    const { filename, mimetype, location } = obj;
+export const isAsset = (obj: unknown): obj is Asset => {
+    const { filename, mimetype, location } = obj as Asset;
 
-    if(typeof filename !== "string") {
+    if (typeof filename !== "string") {
         // TODO: Regex check for filename
         return false;
     }
 
-    if(typeof mimetype !== "string") {
+    if (typeof mimetype !== "string") {
         //TODO: Regex check for mimetype format check
         return false;
     }
 
-    if(typeof location !== "string") {
+    if (typeof location !== "string") {
         return false;
     }
 

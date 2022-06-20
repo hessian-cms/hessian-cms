@@ -3,7 +3,7 @@ import { ContentTypeValidationError } from "./errors";
 import { validateContentTypeAsset } from "./validateContentTypeAsset.function";
 import { validateContentTypeComplex } from "./validateContentTypeComplex.function";
 
-export const validateContentType = async (content: any, contentType: ContentType): Promise<any> => {
+export const validateContentType = async (content: unknown, contentType: ContentType): Promise<unknown> => {
     switch (contentType.type) {
         case "COMPLEX": return await validateContentTypeComplex(content, contentType);
         case "ASSET": return await validateContentTypeAsset(content, contentType);

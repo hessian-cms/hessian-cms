@@ -2,7 +2,7 @@ import { existsSync, statSync } from "fs";
 import { Asset, AssetError, isAsset } from "../asset";
 import { ContentTypeAsset } from "../ContentTypeAsset.interface";
 
-export const validateContentTypeAsset = async (asset: any, contentType: ContentTypeAsset): Promise<Asset> => {
+export const validateContentTypeAsset = async (asset: unknown, contentType: ContentTypeAsset): Promise<Asset> => {
     if (!isAsset(asset)) {
         throw new AssetError("Given asset obj isn't of type Asset")
     }
@@ -47,14 +47,10 @@ export const validateContentTypeAsset = async (asset: any, contentType: ContentT
                 throw new AssetError("Filesize higher then maximum");
             }
         }
-        try {
-            if (filter.condition) {
-                if (!await filter.condition(asset)) {
-                    throw new AssetError("Asset doesn't match condition");
-                }
+        if (filter.condition) {
+            if (!await filter.condition(asset)) {
+                throw new AssetError("Asset doesn't match condition");
             }
-        } catch (e: any) {
-            throw e;
         }
     }
 

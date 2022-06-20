@@ -5,9 +5,9 @@ import { validateFieldTypeComplex } from "./validateFieldTypeComplex.function";
 import { validateFieldTypeNumber } from "./validateFieldTypeNumber.function";
 import { validateFieldTypeString } from "./validateFieldTypeString.function";
 
-export const validateFieldType = async (field: any, fieldType: FieldType, key?: string): Promise<any> => {
+export const validateFieldType = async (field: unknown, fieldType: FieldType, key?: string): Promise<unknown> => {
     if (fieldType.optional && field === undefined) {
-        return field;
+        return "";
     }
 
     switch (fieldType.type) {

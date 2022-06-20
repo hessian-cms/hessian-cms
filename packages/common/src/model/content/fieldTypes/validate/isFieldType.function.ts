@@ -1,8 +1,11 @@
 import { DiscriminatorFieldType, FIELD_TYPES } from "../DiscriminatorFieldType.enum";
 import { FieldType } from "../FieldType.type";
+import { FieldTypeBoolean } from "../FieldTypeBoolean.interface";
+import { FieldTypeComplex } from "../FieldTypeComplex.interface";
+import { FieldTypeNumber } from "../FieldTypeNumber.interface";
 import { FieldTypeString } from "../FieldTypeString.interface";
 
-export const isFieldType = (obj: any): obj is FieldType => {
+export const isFieldType = (obj: FieldType): obj is FieldType => {
     const { type, optional, hidden, condition } = obj;
 
     if (!FIELD_TYPES.includes(type)) {
@@ -30,7 +33,7 @@ export const isFieldType = (obj: any): obj is FieldType => {
     }
 }
 
-const isFieldTypeString = (obj: any): obj is FieldTypeString => {
+const isFieldTypeString = (obj: FieldTypeString): obj is FieldTypeString => {
     if(obj.regExp) {
         if (!(obj.regExp instanceof RegExp)) {
             return false
@@ -40,11 +43,11 @@ const isFieldTypeString = (obj: any): obj is FieldTypeString => {
     return true;
 }
 
-const isFieldTypeBoolean = (obj: any): obj is FieldTypeString => {
+const isFieldTypeBoolean = (obj: FieldTypeBoolean): obj is FieldTypeBoolean => {
     return obj.type === DiscriminatorFieldType.BOOLEAN;
 }
 
-const isFieldTypeNumber = (obj: any): obj is FieldTypeString => {
+const isFieldTypeNumber = (obj: FieldTypeNumber): obj is FieldTypeNumber => {
     if (obj.from !== undefined) {
         if (typeof obj.from !== "number") {
             return false;
@@ -60,7 +63,7 @@ const isFieldTypeNumber = (obj: any): obj is FieldTypeString => {
     return true;
 }
 
-const isFieldTypeComplex = (obj: any): obj is FieldTypeString => {
+const isFieldTypeComplex = <T>(obj: FieldTypeComplex<T>): obj is FieldTypeComplex<T> => {
     if (typeof obj.definition !== "object") {
         return false;
     }
@@ -71,7 +74,7 @@ const isFieldTypeComplex = (obj: any): obj is FieldTypeString => {
         return false;
     }
 
-    for (let key of keys) {
+    for (const key of keys) {
         if (!isFieldType(obj.definition[key])) {
             return false;
         }

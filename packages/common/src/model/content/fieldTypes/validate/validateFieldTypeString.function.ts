@@ -1,7 +1,7 @@
 import { FieldTypeString } from "../FieldTypeString.interface";
 import { FieldTypeValidationErrorString } from "./errors";
 
-export const validateFieldTypeString = async (field: any, fieldType: FieldTypeString, key?: string): Promise<string> => {
+export const validateFieldTypeString = async (field: unknown, fieldType: FieldTypeString, key?: string): Promise<string> => {
     if (typeof field !== 'string') {
         throw new FieldTypeValidationErrorString(key ? [key] : [], "FieldType STRING type not string")
     }
