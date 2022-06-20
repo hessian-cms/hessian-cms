@@ -5,8 +5,8 @@ import { FieldTypeComplex } from "../FieldTypeComplex.interface";
 import { FieldTypeNumber } from "../FieldTypeNumber.interface";
 import { FieldTypeString } from "../FieldTypeString.interface";
 
-export const isFieldType = (obj: FieldType): obj is FieldType => {
-    const { type, optional, hidden, condition } = obj;
+export const isFieldType = (obj: unknown): obj is FieldType => {
+    const { type, optional, hidden, condition } = obj as FieldType;
 
     if (!FIELD_TYPES.includes(type)) {
         return false;
@@ -24,11 +24,11 @@ export const isFieldType = (obj: FieldType): obj is FieldType => {
         return false;
     }
 
-    switch (obj.type) {
-        case DiscriminatorFieldType.BOOLEAN: return isFieldTypeBoolean(obj);
-        case DiscriminatorFieldType.STRING: return isFieldTypeString(obj);
-        case DiscriminatorFieldType.NUMBER: return isFieldTypeNumber(obj);
-        case DiscriminatorFieldType.COMPLEX: return isFieldTypeComplex(obj);
+    switch (type) {
+        case DiscriminatorFieldType.BOOLEAN: return isFieldTypeBoolean(obj as FieldTypeBoolean);
+        case DiscriminatorFieldType.STRING: return isFieldTypeString(obj as FieldTypeString);
+        case DiscriminatorFieldType.NUMBER: return isFieldTypeNumber(obj as FieldTypeNumber);
+        case DiscriminatorFieldType.COMPLEX: return isFieldTypeComplex(obj as FieldTypeComplex);
         default: return false;
     }
 }
