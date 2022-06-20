@@ -8,6 +8,7 @@
     "packages/*"
   ],
   "scripts": {
+    "lint": "yarn workspaces run lint",
     "test": "yarn workspaces run test",
     "build": "yarn workspaces run tsc",
     "postinstall": "echo script:postinstall",
