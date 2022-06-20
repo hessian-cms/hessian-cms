@@ -63,7 +63,7 @@ const isFieldTypeNumber = (obj: FieldTypeNumber): obj is FieldTypeNumber => {
     return true;
 }
 
-const isFieldTypeComplex = <T>(obj: FieldTypeComplex<T>): obj is FieldTypeComplex<T> => {
+const isFieldTypeComplex = <T extends Record<string, unknown> = Record<string, unknown>>(obj: FieldTypeComplex<T>): obj is FieldTypeComplex<T> => {
     if (typeof obj.definition !== "object") {
         return false;
     }
