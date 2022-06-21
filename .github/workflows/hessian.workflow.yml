@@ -24,6 +24,8 @@ jobs:
       run: npx yarn lint
     - name: Test
       run: npx yarn test
+    - name: Generate TsDoc
+      run: npx yarn typedoc
     - name: Upload build
       uses: actions/upload-artifact@v3
       with:
