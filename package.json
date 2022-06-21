@@ -11,6 +11,7 @@
     "lint": "yarn workspaces run lint",
     "test": "yarn workspaces run test",
     "build": "yarn workspaces run tsc",
+    "typedoc": "yarn workspaces run typedoc",
     "postinstall": "echo script:postinstall",
     "preversion": "echo script:preversion",
     "version": "echo script:version",
