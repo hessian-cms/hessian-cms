@@ -1,6 +1,14 @@
 import { FieldTypeNumber } from "../FieldTypeNumber.interface"
 import { FieldTypeValidationErrorNumber } from "./errors"
 
+/**
+ * Validates if field is of field type number
+ * 
+ * @param field - field to be validated 
+ * @param fieldType - FieldTypeNumber to use for valiation
+ * @param key - current postion in object
+ * @returns Promise<boolean>
+ */
 export const validateFieldTypeNumber = async (field: unknown, fieldType: FieldTypeNumber, key?: string): Promise<number> => {
     if (typeof field !== 'number') {
         throw new FieldTypeValidationErrorNumber(key ? [key] : [], "FieldType NUMBER type not boolean")

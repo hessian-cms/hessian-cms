@@ -2,6 +2,13 @@ import { existsSync, statSync } from "fs";
 import { Asset, AssetError, isAsset } from "../asset";
 import { ContentTypeAsset } from "../ContentTypeAsset.interface";
 
+/**
+ * Validates if asset is matching contentType
+ * 
+ * @param asset - object to be validated
+ * @param contentType - ContentTypeAsset to use for validation 
+ * @returns Promise<Asset>
+ */
 export const validateContentTypeAsset = async (asset: unknown, contentType: ContentTypeAsset): Promise<Asset> => {
     if (!isAsset(asset)) {
         throw new AssetError("Given asset obj isn't of type Asset")

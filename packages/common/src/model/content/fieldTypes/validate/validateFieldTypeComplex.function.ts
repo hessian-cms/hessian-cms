@@ -2,6 +2,14 @@ import { FieldTypeComplex } from "../FieldTypeComplex.interface";
 import { FieldTypeValidationError, FieldTypeValidationErrorComplex } from "./errors";
 import { validateFieldType } from "./validateFieldType.function";
 
+/**
+ * Validates if field is of field type complex
+ * 
+ * @param field - field to be validated
+ * @param fieldType - FieldTypeComplex to use for valiation
+ * @param key - current postion in object
+ * @returns Promise<boolean>
+ */
 export const validateFieldTypeComplex = async (field: unknown, fieldType: FieldTypeComplex, key?: string): Promise<unknown> => {
     if (typeof field !== 'object') {
         throw new FieldTypeValidationErrorComplex(key ? [key] : [], "FieldType COMPLEX type not object");
