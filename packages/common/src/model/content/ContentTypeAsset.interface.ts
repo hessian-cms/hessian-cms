@@ -1,4 +1,4 @@
-import { Asset } from "./asset";
+import { ContentTypeAssetFilter } from "./ContentTypeAssetFilter.interface";
 import { ContentTypeCommon } from "./ContentTypeCommon.interface";
 import { DiscriminatorContentType } from "./DiscriminatorContentType.enum";
 
@@ -6,14 +6,12 @@ import { DiscriminatorContentType } from "./DiscriminatorContentType.enum";
  * Definition of ASSET content type
  */
 export interface ContentTypeAsset extends ContentTypeCommon {
+    /**
+     * Discriminator
+     */
     type: DiscriminatorContentType.ASSET,
-    filter?: {
-        regExpMimeType?: RegExp,
-        allowedMimeTypes?: string[],
-        regExpFilename?: RegExp,
-        allowedFilenames?: string,
-        sizeFrom?: number,
-        sizeTo?: number
-        condition?: (asset: Asset)=>Promise<boolean>
-    }
+    /**
+     * Filter informations for `Asset`
+     */
+    filter?: ContentTypeAssetFilter
 }

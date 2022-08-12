@@ -5,6 +5,11 @@ import { FieldTypeComplex } from "../FieldTypeComplex.interface";
 import { FieldTypeNumber } from "../FieldTypeNumber.interface";
 import { FieldTypeString } from "../FieldTypeString.interface";
 
+/**
+ * TypeGuard for FieldType
+ * @param obj - unknown
+ * @returns obj is FieldType
+ */
 export const isFieldType = (obj: unknown): obj is FieldType => {
     const { type, optional, hidden, condition } = obj as FieldType;
 
