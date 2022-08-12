@@ -5,8 +5,8 @@ import { ContentTypeAsset } from "../ContentTypeAsset.interface";
 /**
  * Validates if asset is matching contentType
  * 
- * @param asset 
- * @param contentType 
+ * @param asset - object to be validated
+ * @param contentType - ContentTypeAsset to use for validation 
  * @returns Promise<Asset>
  */
 export const validateContentTypeAsset = async (asset: unknown, contentType: ContentTypeAsset): Promise<Asset> => {

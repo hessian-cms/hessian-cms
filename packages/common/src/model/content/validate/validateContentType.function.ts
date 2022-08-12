@@ -6,8 +6,8 @@ import { validateContentTypeComplex } from "./validateContentTypeComplex.functio
 /**
  * Validates if content is matching contentType
  * 
- * @param content 
- * @param contentType 
+ * @param content - object to be validated
+ * @param contentType - ContentType to use for validation
  * @returns Promise<unkown>
  */
 export const validateContentType = async (content: unknown, contentType: ContentType): Promise<unknown> => {

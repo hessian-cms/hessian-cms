@@ -3,7 +3,7 @@ import { Asset } from "../Asset.interface";
 /**
  * Validates unkown object to be Asset
  * 
- * @param obj 
+ * @param obj - unkown object to be validated
  * @returns boolean
  */
 export const isAsset = (obj: unknown): obj is Asset => {

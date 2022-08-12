@@ -4,9 +4,9 @@ import { FieldTypeValidationErrorBoolean } from "./errors";
 /**
  * Validates if fiels is of field type boolean
  * 
- * @param field 
- * @param fieldType 
- * @param key 
+ * @param field - field to be validated
+ * @param fieldType - FieldTypeBoolean to use for validation
+ * @param key - current postion in object
  * @returns Promise<boolean>
  */
 export const validateFieldTypeBoolean = async (field: unknown, fieldType: FieldTypeBoolean, key?: string): Promise<boolean> => {

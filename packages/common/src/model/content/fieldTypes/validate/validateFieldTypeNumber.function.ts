@@ -4,9 +4,9 @@ import { FieldTypeValidationErrorNumber } from "./errors"
 /**
  * Validates if field is of field type number
  * 
- * @param field 
- * @param fieldType 
- * @param key 
+ * @param field - field to be validated 
+ * @param fieldType - FieldTypeNumber to use for valiation
+ * @param key - current postion in object
  * @returns Promise<boolean>
  */
 export const validateFieldTypeNumber = async (field: unknown, fieldType: FieldTypeNumber, key?: string): Promise<number> => {
