@@ -8,6 +8,9 @@ export enum DiscriminatorFieldType {
     COMPLEX = "COMPLEX"
 }
 
+/**
+ * List of available DiscriminatorFieldType
+ */
 export const FIELD_TYPES: DiscriminatorFieldType[] = [
     DiscriminatorFieldType.STRING, 
     DiscriminatorFieldType.BOOLEAN, 

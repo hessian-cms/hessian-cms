@@ -1,6 +1,14 @@
 import { FieldTypeString } from "../FieldTypeString.interface";
 import { FieldTypeValidationErrorString } from "./errors";
 
+/**
+ * Validates if field is of field type string
+ * 
+ * @param field 
+ * @param fieldType 
+ * @param key 
+ * @returns Promise<boolean>
+ */
 export const validateFieldTypeString = async (field: unknown, fieldType: FieldTypeString, key?: string): Promise<string> => {
     if (typeof field !== 'string') {
         throw new FieldTypeValidationErrorString(key ? [key] : [], "FieldType STRING type not string")
