@@ -1,6 +1,6 @@
 import { HessianConfiguration } from "./HessianConfiguration.interface";
 import { ContentType } from "@hessian-cms/common";
-import { ContentTypeManager } from "./ContentTypeManager.class";
+import { HessianContentTypeManager } from "./HessianContentTypeManager.class";
 
 export class Hessian {
     constructor(private config: HessianConfiguration) { }
@@ -9,8 +9,8 @@ export class Hessian {
         return new Promise<string>(()=>{})
     }
 
-    getContentType(name:string): Promise<ContentTypeManager> {
-        return new Promise<ContentTypeManager>(()=>{})
+    getContentType(name:string): Promise<HessianContentTypeManager> {
+        return new Promise<HessianContentTypeManager>(()=>{})
     }
 
     removeContentType(name:string):Promise<string> {
