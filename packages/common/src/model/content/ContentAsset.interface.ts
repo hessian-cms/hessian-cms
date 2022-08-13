@@ -1,5 +1,5 @@
 import { ContentCommon } from "./ContentCommon.interface";
 
-export class ContentAsset extends ContentCommon {
+export interface ContentAsset extends ContentCommon {
     
 }
