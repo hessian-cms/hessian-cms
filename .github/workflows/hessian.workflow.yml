@@ -45,6 +45,8 @@ jobs:
           !docs
         retention-days: 2
   gh-pages:
+    runs-on: ubuntu-latest
+    steps:
     - name: Deploy GitHub Pages site
       uses: actions/deploy-pages@v1.0.8
       with:
