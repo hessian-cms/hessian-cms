@@ -58,8 +58,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-    - name: Setup GitHub Pages
-      uses: actions/configure-pages@v1
     - name: Deploy GitHub Pages site
       id: gh-pages-deployment
       uses: actions/deploy-pages@main
