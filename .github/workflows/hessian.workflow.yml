@@ -39,7 +39,9 @@ jobs:
     - name: Upload GitHub Pages content
       uses: actions/upload-pages-artifact@v1
       with:
-        path: packages/common/docs
+        path: |
+          packages/common/docs
+          README.md
     - name: Upload build
       uses: actions/upload-artifact@v3
       with:
