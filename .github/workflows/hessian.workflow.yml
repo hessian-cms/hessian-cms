@@ -36,7 +36,7 @@ jobs:
       run: npx yarn test
     - name: Generate TsDoc
       run: npx yarn typedoc
-    - name: Upload build
+    - name: Upload documentation
       uses: actions/upload-artifact@v3
       with:
         name: github-pages
@@ -58,8 +58,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-    - name: Configure GitHub Pages
-      uses: actions/configure-pages@v1
     - name: Deploy GitHub Pages site
       uses: actions/deploy-pages@main
       with:
