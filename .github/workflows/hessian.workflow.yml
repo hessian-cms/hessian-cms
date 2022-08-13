@@ -29,12 +29,12 @@ jobs:
       run: npx yarn test
     - name: Generate TsDoc
       run: npx yarn typedoc
-    - name: Deploy documentation🚀
-      if: github.ref == 'refs/heads/main'
-      uses: JamesIves/github-pages-deploy-action@v4.3.3
+    - name: Upload build
+      uses: actions/upload-artifact@v3
       with:
-        branch: gh-pages 
-        folder: packages/common/docs
+        name: github-pages
+        path: packages/common/docs
+        retention-days: 2
     - name: Upload build
       uses: actions/upload-artifact@v3
       with:
@@ -42,4 +42,10 @@ jobs:
         path: | 
           ./
           !node_modules
+          !docs
         retention-days: 2
+  gh-pages:
+    - name: Deploy GitHub Pages site
+      uses: actions/deploy-pages@v1.0.8
+      with:
+        artifact_name: # optional, default is github-pages
