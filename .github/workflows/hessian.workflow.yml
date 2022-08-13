@@ -54,6 +54,7 @@ jobs:
     needs: build
     environment:
       name: github-pages
+    if: github.ref == 'refs/heads/master'
     steps:
     - name: Deploy GitHub Pages site
       id: gh-pages-deployment
