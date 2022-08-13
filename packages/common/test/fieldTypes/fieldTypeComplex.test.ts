@@ -1,4 +1,4 @@
-import { DiscriminatorFieldType, FieldType, validateFieldTypeComplex } from "../../src/model/content";
+import { DiscriminatorFieldType, FieldType, validateFieldTypeComplex } from "../../src/model/contentType";
 
 export const TEST_DEFINITON_FIELD_TYPE: FieldType = {
     type: DiscriminatorFieldType.COMPLEX,

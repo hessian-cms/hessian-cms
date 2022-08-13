@@ -1,5 +1,5 @@
-import { DiscriminatorFieldType, validateFieldTypeNumber } from "../../src/model/content";
-import { FieldTypeValidationErrorNumber } from "../../src/model/content/fieldTypes/validate/errors";
+import { DiscriminatorFieldType, validateFieldTypeNumber } from "../../src/model/contentType";
+import { FieldTypeValidationErrorNumber } from "../../src/model/contentType/fieldTypes/validate/errors";
 
 describe("Number field validation tests", () => {
     test("Test simple number field validation with 0", async () => {

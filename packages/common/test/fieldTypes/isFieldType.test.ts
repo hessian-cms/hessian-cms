@@ -1,4 +1,4 @@
-import { DiscriminatorFieldType, isFieldType } from "../../src/model/content";
+import { DiscriminatorFieldType, isFieldType } from "../../src/model/contentType";
 
 
 describe("Test on function isFieldType", () => {

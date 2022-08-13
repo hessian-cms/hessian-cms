@@ -1,5 +1,5 @@
-import { DiscriminatorFieldType, validateFieldTypeString } from "../../src/model/content"
-import { FieldTypeValidationErrorString } from "../../src/model/content/fieldTypes/validate/errors";
+import { DiscriminatorFieldType, validateFieldTypeString } from "../../src/model/contentType"
+import { FieldTypeValidationErrorString } from "../../src/model/contentType/fieldTypes/validate/errors";
 
 const TEST_STRING = "TeSt"
 const TEST_STRING_STARTS_WITH = "Te";
