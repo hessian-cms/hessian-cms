@@ -36,12 +36,10 @@ jobs:
       run: npx yarn test
     - name: Generate TsDoc
       run: npx yarn typedoc
-    - name: Upload documentation
-      uses: actions/upload-artifact@v3
+    - name: Upload GitHub Pages content
+      uses: actions/upload-pages-artifact@v1
       with:
-        name: github-pages
         path: packages/common/docs
-        retention-days: 2
     - name: Upload build
       uses: actions/upload-artifact@v3
       with:
