@@ -41,7 +41,6 @@ jobs:
       with:
         path: |
           packages/common/docs
-          README.md
     - name: Upload build
       uses: actions/upload-artifact@v3
       with:
@@ -56,10 +55,7 @@ jobs:
     needs: build
     environment:
       name: github-pages
-      #url: ${{ steps.deployment.outputs.page_url }}
     steps:
     - name: Deploy GitHub Pages site
       id: gh-pages-deployment
       uses: actions/deploy-pages@main
-      #with:
-      #  artifact_name: github-pages
