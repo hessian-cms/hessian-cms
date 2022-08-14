@@ -1,1 +1,1 @@
-export * from "./LocalPersistenceManager.class";
+export * from "./LocalPersistenceManager.class"

@@ -1,3 +1,2 @@
 export * from "./local"
-export * from "./dummy"
-export * from "./PersistenceManager.interface"
+export * from "./PersistenceManager.abstract.class"
