@@ -1,4 +1,4 @@
-import { ContentTypeAsset, ContentTypeAssetFilter, ContentTypeComplex, DiscriminatorContentType, isContentTypeAsset, isContentTypeAssetFilter, isContentTypeComplex } from "../../src";
+import { ContentTypeAsset, ContentTypeAssetFilter, ContentTypeComplex, DiscriminatorContentType, DiscriminatorFieldType, isContentTypeAsset, isContentTypeAssetFilter, isContentTypeComplex } from "../../src";
 import { isContentType } from "../../src";
 
 const WRONG = {
@@ -20,7 +20,18 @@ const CORRECT_CONTENT_TYPE_ASSET = {
 
 const CORRECT_CONTENT_TYPE_COMPLEX:ContentTypeComplex = {
     type: DiscriminatorContentType.COMPLEX,
-    definition: {}
+    definition: {
+        name: {
+            type: DiscriminatorFieldType.STRING,
+        }
+    }
+}
+
+const WRONG_CONTENT_TYPE_COMPLEX = {
+    type: DiscriminatorContentType.COMPLEX,
+    definition: {
+        a: 1
+    }
 }
 
 describe("ContentType typeguard tests", () => {
@@ -50,5 +61,13 @@ describe("ContentType typeguard tests", () => {
 
     test("Testing proper ContentTypeComplex with isContentTypeComplex", async () => {
         return expect(isContentTypeComplex(CORRECT_CONTENT_TYPE_COMPLEX)).toBe(true);
+    })
+
+    test("Testing wrong ContentTypeComplex with isContentType", async () => {
+        return expect(isContentType(WRONG_CONTENT_TYPE_COMPLEX)).toBe(false);
+    })
+
+    test("Testing wrong ContentTypeComplex with isContentTypeComplex", async () => {
+        return expect(isContentTypeComplex(WRONG_CONTENT_TYPE_COMPLEX)).toBe(false);
     })
 });

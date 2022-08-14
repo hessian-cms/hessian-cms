@@ -11,7 +11,6 @@ export const isContentTypeAsset = (contentType: unknown): contentType is Content
     }
 
     if (type !== DiscriminatorContentType.ASSET) {
-        console.log("type", type !== DiscriminatorContentType.ASSET)
         return false;
     }
 

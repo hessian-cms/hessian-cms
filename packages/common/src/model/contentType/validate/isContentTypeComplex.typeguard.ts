@@ -1,5 +1,6 @@
 import { ContentTypeComplex } from "../ContentTypeComplex.interface";
 import { DiscriminatorContentType } from "../DiscriminatorContentType.enum";
+import { isFieldsDefinition } from "../fieldTypes";
 import { isContentTypeCommon } from "./isContentTypeCommon.typeguard";
 
 export const isContentTypeComplex = (contentType: unknown): contentType is ContentTypeComplex => {
@@ -13,7 +14,5 @@ export const isContentTypeComplex = (contentType: unknown): contentType is Conte
         return false;
     }
 
-    // TODO: implement typeguard definition
-
-    return true;
+    return isFieldsDefinition(definition);
 }
