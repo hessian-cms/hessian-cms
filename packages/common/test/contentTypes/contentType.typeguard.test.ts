@@ -1,5 +1,5 @@
-import { ContentTypeAsset, ContentTypeAssetFilter, ContentTypeComplex, DiscriminatorContentType, DiscriminatorFieldType, isContentTypeAsset, isContentTypeAssetFilter, isContentTypeComplex } from "../../src";
-import { isContentType } from "../../src";
+import { ContentTypeAssetFilter, ContentTypeComplex, DiscriminatorContentType, DiscriminatorFieldType, isContentTypeAsset, isContentTypeAssetFilter, isContentTypeComplex } from "../../src/model";
+import { isContentType } from "../../src/model";
 
 const WRONG = {
     sizeFrom: "Hello",
