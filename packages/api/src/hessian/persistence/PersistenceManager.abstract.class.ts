@@ -1,4 +1,4 @@
-import { ContentType } from "@hessian-cms/common";
+import { ContentType, ContentTypeCollection } from "@hessian-cms/common";
 
 export abstract class PersistenceManager {
     constructor() {
@@ -9,9 +9,9 @@ export abstract class PersistenceManager {
         this.removeContentType = this.removeContentType.bind(this);
     }
 
-    abstract registerContentType(slug:string, contentType:ContentType):Promise<ContentType>
+    abstract registerContentType(slug:string, contentType:ContentType):Promise<string>
     abstract getContentType(slug:string): Promise<ContentType>
-    abstract getAllContentTypes(): Promise<ContentType[]>
+    abstract getAllContentTypes(): Promise<ContentTypeCollection>
     abstract updateContentType(slug:string, contentType:ContentType): Promise<ContentType>
     abstract removeContentType(slug:string): Promise<string>
 }
