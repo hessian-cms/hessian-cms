@@ -16,7 +16,8 @@
     "preversion": "echo script:preversion",
     "version": "echo script:version",
     "postversion": "echo script:postversion",
-    "start": "echo Not imeplemented yet"
+    "start": "echo Not imeplemented yet",
+    "publish": "yarn workspaces run publish"
   },
   "keywords": [],
   "author": "",
