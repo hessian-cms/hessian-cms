@@ -12,7 +12,10 @@
     "test:watch": "jest --watch",
     "lint": "eslint . --ext .ts",
     "typedoc": "typedoc src/index.d.ts",
-    "publish:npmjs": "yarn publish --access public"
+    "publish:npmjs": "yarn publish --access public",
+    "version:patch": "yarn version --patch --no-git-tag-version --no-commit-hooks",
+    "version:minor": "yarn version --minor --no-git-tag-version --no-commit-hooks",
+    "version:major": "yarn version --major --no-git-tag-version --no-commit-hooks"
   },
   "peerDependencies": {},
   "license": "AGPL-3.0-or-later",

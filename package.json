@@ -17,7 +17,10 @@
     "version": "echo script:version",
     "postversion": "echo script:postversion",
     "start": "echo Not imeplemented yet",
-    "publish": "yarn workspaces run publish:npmjs"
+    "publish": "yarn workspaces run publish:npmjs",
+    "version:patch": "yarn version --patch --no-git-tag-version --no-commit-hooks && yarn workspaces run version:patch",
+    "version:minor": "yarn version --minor --no-git-tag-version --no-commit-hooks && yarn workspaces run version:minor",
+    "version:major": "yarn version --major --no-git-tag-version --no-commit-hooks && yarn workspaces run version:major"
   },
   "keywords": [],
   "author": "",
