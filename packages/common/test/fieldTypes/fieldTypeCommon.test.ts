@@ -1,5 +1,5 @@
-import { DiscriminatorFieldType, validateFieldTypeBoolean } from "../../src/model/content";
-import { FieldTypeValidationErrorBoolean } from "../../src/model/content/fieldTypes/validate/errors";
+import { DiscriminatorFieldType, validateFieldTypeBoolean } from "../../src/model/contentType";
+import { FieldTypeValidationErrorBoolean } from "../../src/model/contentType/fieldTypes/validate/errors";
 
 describe("Common field validation tests", () => {
     test("Test simple optional allowed", async () => {

@@ -1,6 +1,6 @@
 {
   "name": "@hessian-cms/common",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "src/index.d.ts",
   "types": "src/index.d.ts",
   "files": [
@@ -11,7 +11,11 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "lint": "eslint . --ext .ts",
-    "typedoc": "typedoc src/index.d.ts"
+    "typedoc": "typedoc src/index.d.ts",
+    "publish:npmjs": "yarn publish --access public",
+    "version:patch": "yarn version --patch --no-git-tag-version --no-commit-hooks",
+    "version:minor": "yarn version --minor --no-git-tag-version --no-commit-hooks",
+    "version:major": "yarn version --major --no-git-tag-version --no-commit-hooks"
   },
   "peerDependencies": {},
   "license": "AGPL-3.0-or-later",

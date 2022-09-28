@@ -26,6 +26,7 @@ jobs:
       uses: actions/setup-node@v2
       with: 
         node-version: 16.x
+        registry-url: https://registry.npmjs.org
     - name: node --version
       run: node --version
     - name: Install dependencies
@@ -34,10 +35,17 @@ jobs:
       run: npx yarn lint
     - name: Test
       run: npx yarn test
+    - name: 🚀 Publish to npmjs
+      run: npx yarn run publish
+      working-directory: .
+      if: github.ref == 'refs/heads/main'
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_SECRET}}
     - name: Generate TsDoc
       run: npx yarn typedoc
     - name: Upload GitHub Pages content
       uses: actions/upload-pages-artifact@v1
+      if: github.ref == 'refs/heads/main'
       with:
         path: packages/common/docs
     - name: Upload build
