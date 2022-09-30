@@ -10,3 +10,4 @@ export * from "./DiscriminatorFieldTypeMapping.interface"
 
 export * from "./validate/errors"
 export * from "./validate"
+export * from './typeguards'

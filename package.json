@@ -8,6 +8,7 @@
     "packages/*"
   ],
   "scripts": {
+    "before:push": "yarn test && yarn lint && yarn typedoc",
     "lint": "yarn workspaces run lint",
     "test": "yarn workspaces run test",
     "build": "yarn workspaces run tsc",
