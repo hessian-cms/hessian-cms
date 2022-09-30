@@ -1,10 +1,6 @@
 export * from './errors'
-export * from './isFieldType.typeguard'
-export * from './isFieldTypeBoolean.typeguard'
-export * from './isFieldTypeComplex.typeguard'
-export * from './isFieldTypeNumber.typeguard'
-export * from './isFieldTypeString.typeguard'
-export * from './isFieldsDefinition.typeguard'
+
+export * from '../typeguards/isFieldsDefinition.typeguard'
 export * from './validateFieldType.function'
 export * from './validateFieldTypeBoolean.function'
 export * from './validateFieldTypeComplex.function'
