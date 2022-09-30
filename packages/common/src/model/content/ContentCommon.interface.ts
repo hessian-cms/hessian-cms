@@ -1,6 +1,6 @@
-import { WithId } from "../common";
 import { DiscriminatorContentType } from "../contentType";
 
-export interface ContentCommon extends WithId<string> {
+export interface ContentCommon {
+    id?: string
     type: DiscriminatorContentType
 }

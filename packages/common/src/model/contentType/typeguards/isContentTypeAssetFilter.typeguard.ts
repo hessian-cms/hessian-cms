@@ -1,4 +1,4 @@
-import { optionalArrayOf, optionalTypeOf } from "../../common";
+import { optionalArrayOf, optionalTypeOf } from "../../helper";
 import { ContentTypeAssetFilter } from "../ContentTypeAssetFilter.interface";
 
 export const isContentTypeAssetFilter = (contentTypeAssetFilter: unknown): contentTypeAssetFilter is ContentTypeAssetFilter => {
