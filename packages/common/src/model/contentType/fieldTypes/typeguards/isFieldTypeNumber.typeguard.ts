@@ -1,4 +1,4 @@
-import { optionalTypeOf } from "../../../common";
+import { optionalTypeOf } from "../../../helper";
 import { FieldTypeNumber } from "../FieldTypeNumber.interface";
 
 export const isFieldTypeNumber = (obj: unknown): obj is FieldTypeNumber => {

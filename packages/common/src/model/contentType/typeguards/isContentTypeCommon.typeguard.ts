@@ -1,4 +1,4 @@
-import { optionalTypeOf } from "../../common";
+import { optionalTypeOf } from "../../helper";
 import { ContentType } from "../ContentType.type";
 import { DiscriminatorContentType } from "../DiscriminatorContentType.enum";
 
