@@ -5,13 +5,14 @@
   "description": "",
   "main": "index.js",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "doc-page"
   ],
   "scripts": {
     "before:push": "yarn test && yarn lint && yarn typedoc",
     "lint": "yarn workspaces run lint",
     "test": "yarn workspaces run test",
-    "build": "yarn workspaces run tsc",
+    "build": "yarn workspaces run build",
     "typedoc": "yarn workspaces run typedoc",
     "postinstall": "echo script:postinstall",
     "preversion": "echo script:preversion",

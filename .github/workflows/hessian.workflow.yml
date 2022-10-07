@@ -35,13 +35,17 @@ jobs:
       run: npx yarn lint
     - name: Test
       run: npx yarn test
+    - name: Build
+      run: npx yarn build
     - name: Generate TsDoc
       run: npx yarn typedoc
+    - name: Copy type-doc to Pages out folder
+      run: cp -R packages/common/docs doc-page/out/type-doc
     - name: Upload GitHub Pages content
       uses: actions/upload-pages-artifact@v1
       if: github.ref == 'refs/heads/main'
       with:
-        path: packages/common/docs
+        path: doc-page/out
     - name: Upload build
       uses: actions/upload-artifact@v3
       with:
