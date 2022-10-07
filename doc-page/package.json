@@ -7,7 +7,8 @@
     "build": "next build && next export",
     "start": "next start",
     "lint": "next lint",
-    "test": "echo \"Not implemented yet for doc-page\""
+    "test": "echo \"Not implemented yet for doc-page\"",
+    "typedoc": "echo \"Not needed for doc-page\""
   },
   "dependencies": {
     "next": "12.3.1",
