@@ -6,7 +6,7 @@
   "author": "No4Any",
   "license": "AGPL-3.0-or-later",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -P tsconfig.prod.json",
     "test": "jest"
   },
   "dependencies": {

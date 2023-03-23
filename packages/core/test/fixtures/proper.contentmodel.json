@@ -3,6 +3,12 @@
     "definition": {
         "type": "OBJECT",
         "definition": {
+            "arr": {
+                "type": "ARRAY",
+                "definition": {
+                    "type": "BOOLEAN"
+                }
+            },
             "num": {
                 "type": "NUMBER"
             },
@@ -15,6 +21,12 @@
             "obj": {
                 "type": "OBJECT",
                 "definition": {
+                    "arr": {
+                        "type": "ARRAY",
+                        "definition": {
+                            "type": "BOOLEAN"
+                        }
+                    },
                     "num": {
                         "type": "NUMBER"
                     },
