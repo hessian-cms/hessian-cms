@@ -9,7 +9,8 @@
     "doc-page"
   ],
   "scripts": {
-    "build": "yarn workspaces run build"
+    "build": "yarn workspaces run build",
+    "test": "yarn workspaces run test"
   },
   "keywords": [],
   "author": "No4Any",

@@ -1,20 +1,16 @@
 import { z } from "zod";
+import { FieldTypeArrayBaseSchema } from "./FieldTypeArray.zod";
+import { FieldTypeBooleanSchema } from "./FieldTypeBoolean.zod";
+import { FieldTypeNumberSchema } from "./FieldTypeNumber.zod";
+import { FieldTypeObjectSchema } from "./FieldTypeObject.zod";
+import { FieldTypeStringSchema } from "./FieldTypeString.zod";
 
-export const FIELD_TYPE_TEXT: string = "TEXT"
-//export const FIELD_TYPE_NUMBER: string = "NUMBER"
-export const FIELD_TYPE_BOOLEAN: string = "BOOLEAN"
-
-export const FIELD_TYPES_AVAILABLE: string[] = [
-    FIELD_TYPE_TEXT, 
-//    FIELD_TYPE_NUMBER, 
-    FIELD_TYPE_BOOLEAN]
-
-export const FieldTypeSchema = z.object({
-    type: z.union([
-        z.literal(FIELD_TYPE_TEXT),
- //       z.literal(FIELD_TYPE_NUMBER),
-        z.literal(FIELD_TYPE_BOOLEAN)
-    ])
-})
+export const FieldTypeSchema = z.union([
+    FieldTypeBooleanSchema,
+    FieldTypeNumberSchema,
+    FieldTypeStringSchema,
+    FieldTypeObjectSchema,
+    FieldTypeArrayBaseSchema
+]);
 
 export type FieldType = z.infer<typeof FieldTypeSchema>;

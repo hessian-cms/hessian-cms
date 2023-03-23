@@ -1,2 +1,4 @@
-export * from "./FieldType.zod"
-export * from "./FieldTypeText.zod"
+export * from "./FieldTypeString.zod"
+export * from "./FieldTypeNumber.zod"
+export * from "./FieldTypeBoolean.zod"
+export * from "./FieldTypeObject.zod"

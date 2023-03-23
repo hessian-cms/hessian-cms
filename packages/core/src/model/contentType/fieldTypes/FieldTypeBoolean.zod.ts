@@ -1,7 +1,8 @@
 import { z } from "zod";
-import { FieldTypeSchema, FIELD_TYPE_BOOLEAN } from "./FieldType.zod";
 
-export const FieldTypeBooleanSchema = FieldTypeSchema.extend({
+export const FIELD_TYPE_BOOLEAN = "BOOLEAN";
+
+export const FieldTypeBooleanSchema = z.object({
     type: z.literal(FIELD_TYPE_BOOLEAN),
 })
 
