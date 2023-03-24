@@ -32,8 +32,6 @@ jobs:
         name: core build
         path: | 
           ./packages/core
-          !src
-          !node_modules
-          !docs
-          !test
+          !./packages/core/node_modules
+          !./packages/core/test
         retention-days: 2
