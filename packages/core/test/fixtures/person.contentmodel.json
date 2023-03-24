@@ -1,0 +1,21 @@
+{
+    "maxEntries": 5,
+    "definition": {
+        "type": "OBJECT",
+        "definition": {
+            "name": {
+                "type": "STRING"
+            },
+            "firstname": {
+                "type": "STRING"
+            },
+            "attributes": {
+                "type": "ARRAY",
+                "definition": {
+                    "type": "STRING",
+                    "min": 1
+                }
+            }
+        }
+    }
+}

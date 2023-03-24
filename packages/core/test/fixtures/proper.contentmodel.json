@@ -1,0 +1,43 @@
+{
+    "maxEntries": 5,
+    "definition": {
+        "type": "OBJECT",
+        "definition": {
+            "arr": {
+                "type": "ARRAY",
+                "definition": {
+                    "type": "BOOLEAN"
+                }
+            },
+            "num": {
+                "type": "NUMBER"
+            },
+            "str": {
+                "type": "STRING"
+            },
+            "bool": {
+                "type": "BOOLEAN"
+            },
+            "obj": {
+                "type": "OBJECT",
+                "definition": {
+                    "arr": {
+                        "type": "ARRAY",
+                        "definition": {
+                            "type": "BOOLEAN"
+                        }
+                    },
+                    "num": {
+                        "type": "NUMBER"
+                    },
+                    "str": {
+                        "type": "STRING"
+                    },
+                    "bool": {
+                        "type": "BOOLEAN"
+                    }
+                }
+            }
+        }
+    }
+}
