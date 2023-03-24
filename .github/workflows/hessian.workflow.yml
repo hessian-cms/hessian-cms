@@ -24,7 +24,7 @@ jobs:
       run: npx yarn install
     - name: Build
       run: npx yarn build
-    - test: Test
+    - name: Test
       run: npx yarn test
     - name: Upload build
       uses: actions/upload-artifact@v3
