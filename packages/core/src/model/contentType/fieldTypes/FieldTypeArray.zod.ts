@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { getFieldTypeValidator } from "./FieldType.zod";
 import { FieldTypeBoolean, FieldTypeBooleanSchema } from "./FieldTypeBoolean.zod";
 import { FieldTypeNumber, FieldTypeNumberSchema } from "./FieldTypeNumber.zod";
 import { FieldTypeObject, FieldTypeObjectSchema } from "./FieldTypeObject.zod";
@@ -12,18 +13,23 @@ export const FieldTypeArrayBaseSchema = z.object({
 
 export type FieldTypeArray = z.infer<typeof FieldTypeArrayBaseSchema> & {
     definition: FieldTypeObject
-        | FieldTypeBoolean
-        | FieldTypeNumber
-        | FieldTypeString
-        | FieldTypeArray
+    | FieldTypeBoolean
+    | FieldTypeNumber
+    | FieldTypeString
+    | FieldTypeArray
 };
 
 export const FieldTypeArraySchema: z.ZodType<FieldTypeArray> = FieldTypeArrayBaseSchema.extend({
     definition: z.lazy(() => z.union([
-        FieldTypeObjectSchema,
+        FieldTypeArraySchema,
         FieldTypeBooleanSchema,
         FieldTypeNumberSchema,
+        FieldTypeObjectSchema,
         FieldTypeStringSchema,
-        FieldTypeArraySchema
     ]))
 })
+
+export function getFieldTypeValidatorArray(fieldTypeArray: unknown): z.ZodType {
+    const fieldType = FieldTypeArraySchema.parse(fieldTypeArray);
+    return z.array(getFieldTypeValidator(fieldType.definition));
+}

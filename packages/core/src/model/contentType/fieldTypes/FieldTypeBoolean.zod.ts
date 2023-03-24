@@ -7,3 +7,8 @@ export const FieldTypeBooleanSchema = z.object({
 })
 
 export type FieldTypeBoolean = z.infer<typeof FieldTypeBooleanSchema>;
+
+export function getFieldTypeValidatorBoolean(fieldTypeBoolean: unknown): z.ZodType {
+    FieldTypeBooleanSchema.parse(fieldTypeBoolean);
+    return z.boolean();
+}

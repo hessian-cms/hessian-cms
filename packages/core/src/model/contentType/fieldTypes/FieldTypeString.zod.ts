@@ -13,3 +13,18 @@ export const FieldTypeStringSchema = z.object({
 })
 
 export type FieldTypeString = z.infer<typeof FieldTypeStringSchema>;
+
+export function getFieldTypeValidatorString(fieldTypeString: unknown): z.ZodType {
+    const schema = FieldTypeStringSchema.parse(fieldTypeString);
+    let validator = z.string();
+    if (schema.min !== undefined) {
+        validator = validator.min(schema.min)
+    }
+    if (schema.max !== undefined) {
+        validator = validator.max(schema.max)
+    }
+    if(schema.regexp !== undefined) {
+        validator = validator.regex(new RegExp(schema.regexp))
+    }
+    return validator;
+}

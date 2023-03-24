@@ -1,5 +1,5 @@
 {
-  "name": "core",
+  "name": "@hessian-cms/core",
   "version": "1.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -7,7 +7,8 @@
   "license": "AGPL-3.0-or-later",
   "scripts": {
     "build": "tsc -P tsconfig.prod.json",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watchAll"
   },
   "dependencies": {
     "typescript": "^5.0.2",

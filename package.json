@@ -10,7 +10,8 @@
   ],
   "scripts": {
     "build": "yarn workspaces run build",
-    "test": "yarn workspaces run test"
+    "test": "yarn workspaces run test",
+    "test:watch:core": "yarn workspace @hessian-cms/core run test:watch"
   },
   "keywords": [],
   "author": "No4Any",

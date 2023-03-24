@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { getFieldTypeValidator } from "./FieldType.zod";
 import { FieldTypeArray, FieldTypeArraySchema } from "./FieldTypeArray.zod";
 import { FieldTypeBoolean, FieldTypeBooleanSchema } from "./FieldTypeBoolean.zod";
 import { FieldTypeNumber, FieldTypeNumberSchema } from "./FieldTypeNumber.zod";
@@ -29,3 +30,14 @@ export const FieldTypeObjectSchema: z.ZodType<FieldTypeObject> = FieldTypeObject
         FieldTypeArraySchema
     ])))
 })
+
+export function getFieldTypeValidatorObject(fieldTypeObject: unknown): z.ZodType {
+    const schema = FieldTypeObjectSchema.parse(fieldTypeObject);
+    let validator = z.object({});
+    Object.keys(schema.definition).forEach((key: string) => {
+        validator = validator.extend({
+            [key]: getFieldTypeValidator(schema.definition[key])
+        })
+    });
+    return validator;
+}
